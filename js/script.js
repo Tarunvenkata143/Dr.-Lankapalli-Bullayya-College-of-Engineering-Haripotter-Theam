@@ -255,13 +255,117 @@ function createBranchAnimation(container, type) {
 }
 
 function generateResult() {
-    const grades = ["Outstanding Sorcery", "Exceeds Magical Expectations", "Acceptable Spellcasting", "Needs Practice"];
+    const cseSubjects = [
+        "Ancient Data Scrolls",
+        "Artificial Intelligence Spellcraft",
+        "Operating Realm Systems",
+        "Advanced Algorithm Spells",
+        "Machine Learning Enchantments",
+        "Data Structure Wizardry",
+        "Software Engineering Magic",
+        "Cryptography Hexes",
+        "Database Sorcery",
+        "Cloud Kingdom Magic"
+    ];
+    
+    const cseAchievements = [
+        "✓ Mastered the Python Incantation",
+        "✓ Decoded the Binary Runes",
+        "✓ Summoned Data from the Cloud Realm",
+        "✓ Cast the Swift Algorithm Spell",
+        "✓ Unlocked the Database Vault",
+        "✓ Harnessed Machine Learning Powers",
+        "✓ Mastered Object-Oriented Enchantments",
+        "✓ Forged Unbreakable Code Hexes",
+        "✓ Conjured Debugging Spells",
+        "✓ Wielded the GUI Framework"
+    ];
+    
+    const grades = [
+        "Outstanding Sorcery",
+        "Exceeds Magical Expectations",
+        "Exemplary Computation Magic",
+        "Brilliant Algorithm Mastery",
+        "Acceptable Spellcasting",
+        "Needs More Practice"
+    ];
+    
+    const verdicts = [
+        "✨ A true Master of Arcane Code ✨",
+        "⚡ Exceptional Computational Wizard ⚡",
+        "📚 Guardian of the Data Realm 📚",
+        "🔮 Keeper of Ancient Algorithms 🔮",
+        "💎 Pinnacle of Engineering Magic 💎",
+        "🌟 Champion of the Encrypted Spells 🌟"
+    ];
+    
     const randomGrade = grades[Math.floor(Math.random() * grades.length)];
-    const score = Math.floor(Math.random() * 41) + 60; // 60-100
+    const randomVerdict = verdicts[Math.floor(Math.random() * verdicts.length)];
+    const score = Math.floor(Math.random() * 31) + 70; // 70-100
+    
+    // Randomly select 4-5 CSE subjects
+    const numSubjects = Math.floor(Math.random() * 2) + 4; // 4 or 5 subjects
+    const selectedSubjects = [];
+    const subjectsCopy = [...cseSubjects];
+    for (let i = 0; i < numSubjects; i++) {
+        const idx = Math.floor(Math.random() * subjectsCopy.length);
+        selectedSubjects.push(subjectsCopy[idx]);
+        subjectsCopy.splice(idx, 1);
+    }
+    
+    // Randomly select 2-3 achievements
+    const numAchievements = Math.floor(Math.random() * 2) + 2; // 2 or 3 achievements
+    const selectedAchievements = [];
+    const achievementsCopy = [...cseAchievements];
+    for (let i = 0; i < numAchievements; i++) {
+        const idx = Math.floor(Math.random() * achievementsCopy.length);
+        selectedAchievements.push(achievementsCopy[idx]);
+        achievementsCopy.splice(idx, 1);
+    }
 
     const out = document.getElementById('resultOutput');
     if (out) {
-        out.innerHTML = `<strong>Apprentice:</strong> Tharun<br><strong>Spell Score:</strong> ${score}/100<br><strong>Verdict:</strong> ✨ ${randomGrade} ✨`;
+        let html = `
+            <div class="result-header">✨ EXAMINATION SCROLL OF ARCANE COMPUTATION ✨</div>
+            <div class="result-content">
+                <p class="wizard-name"><strong>Apprentice Wizard:</strong> Dr.Bullayya Sir</p>
+                <p><strong>Order of Mastery:</strong> Order of Arcane Computation (CSE)</p>
+                <p><strong>Examination Date:</strong> ${new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</p>
+                
+                <div class="result-subjects-header">📖 Subjects Examined:</div>
+                <div class="result-subjects-list">
+        `;
+        
+        selectedSubjects.forEach(subject => {
+            const subScore = Math.floor(Math.random() * 26) + 75; // 75-100
+            html += `<div class="subject-result"><span>${subject}</span><span class="score">${subScore}/100</span></div>`;
+        });
+        
+        html += `
+                </div>
+                
+                <div class="result-achievements-header">🌟 Magical Achievements:</div>
+                <div class="result-achievements-list">
+        `;
+        
+        selectedAchievements.forEach(achievement => {
+            html += `<div class="achievement-item">${achievement}</div>`;
+        });
+        
+        html += `
+                </div>
+                
+                <div class="result-score-section">
+                    <div><strong>Overall Computational Score:</strong></div>
+                    <div class="overall-score">${score}/100</div>
+                </div>
+                
+                <div class="result-grade"><strong>Grade:</strong> ${randomGrade}</div>
+                <div class="result-verdict">${randomVerdict}</div>
+                <div class="result-footer">~ Sealed by the Headmaster's Computational Quill ~</div>
+            </div>
+        `;
+        out.innerHTML = html;
     }
 }
 
