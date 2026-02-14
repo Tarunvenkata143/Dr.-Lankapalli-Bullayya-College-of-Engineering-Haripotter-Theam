@@ -24,8 +24,12 @@ function enterAcademy() {
 }
 
 function openDept(dept) {
-    localStorage.setItem("selectedDept", dept);
-    window.location.href = "department.html";
+    const loader = document.getElementById('pageLoader');
+    if (loader) loader.classList.add('show');
+    setTimeout(() => {
+        localStorage.setItem("selectedDept", dept);
+        window.location.href = "department.html";
+    }, 4000);
 }
 
 function loadDepartment() {
@@ -260,6 +264,17 @@ function generateResult() {
         out.innerHTML = `<strong>Apprentice:</strong> Tharun<br><strong>Spell Score:</strong> ${score}/100<br><strong>Verdict:</strong> ✨ ${randomGrade} ✨`;
     }
 }
+
+// Show loader on page load for 4 seconds
+document.addEventListener('DOMContentLoaded', function() {
+    const loader = document.getElementById('pageLoader');
+    if (loader) {
+        loader.classList.add('show');
+        setTimeout(() => {
+            loader.classList.remove('show');
+        }, 4000);
+    }
+});
 
 // Keyboard shortcut R to reveal result on results page
 document.addEventListener('keydown', function(e){
