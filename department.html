@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Department | Dr. Lankapalli Bullayya College of Engineering</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="site-header small">
+    <div class="container header-inner">
+        <div class="brand">
+            <img src="assets/college_logo.png" alt="LBCE crest" class="logo-img">
+            <div>
+                <h1 id="deptTitle">Department</h1>
+                <p class="tag">Dr. LBCE — Explore the Order</p>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <a href="index.html">Home</a>
+            <a href="departments.html">Departments</a>
+            <a href="results.html">Results</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <!-- Department Hero Banner with Animations -->
+    <section id="deptHero" class="dept-hero">
+        <div id="heroAnimationContainer" class="hero-animation-container"></div>
+        <div class="dept-hero-inner">
+            <h2 id="deptHeroTitle"></h2>
+            <p id="deptHeroSubtitle"></p>
+        </div>
+    </section>
+
+    <div class="container content">
+        <!-- About Section -->
+        <section class="dept-about">
+            <h3>About the Order</h3>
+            <p id="deptDescription"></p>
+        </section>
+
+        <!-- Magical Subjects Grid -->
+        <section class="dept-subjects">
+            <h3>Magical Subjects</h3>
+            <div class="subject-grid">
+                <ul id="subjects"></ul>
+            </div>
+        </section>
+
+        <!-- Department Features -->
+        <section class="dept-features" id="deptFeaturesSection">
+            <h3>Order Features</h3>
+            <div class="features-grid" id="featuresGrid"></div>
+        </section>
+
+        <p><a href="departments.html" class="ghost">← Back to Departments</a></p>
+    </div>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <p>© 2026 Dr. Lankapalli Bullayya College of Engineering</p>
+    </div>
+ </footer>
+
+<script src="js/script.js"></script>
+<script>loadDepartment();</script>
+</body>
+</html>

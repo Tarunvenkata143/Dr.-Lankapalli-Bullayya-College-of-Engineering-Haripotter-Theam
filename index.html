@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Dr. Lankapalli Bullayya College of Engineering</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<!-- HP-Themed Modal Popup -->
+<div id="welcomeModal" class="modal">
+    <div class="modal-content">
+        <button class="close" onclick="closeModal()">&times;</button>
+        <div class="modal-inner">
+            <h2>✨ Welcome to the Realm of Engineering Magic! ✨</h2>
+            <p>You stand at the entrance of Dr. Lankapalli Bullayya College of Engineering.</p>
+            <p>Four great Orders await your selection:</p>
+            <div class="orders-preview">
+                <div class="order-badge">Order of Arcane Computation</div>
+                <div class="order-badge">Order of Enchanted Signals</div>
+                <div class="order-badge">Guild of Lightning Masters</div>
+                <div class="order-badge">Order of Mechanical Alchemists</div>
+            </div>
+            <button class="magic-btn" onclick="closeModal()">I'm Ready</button>
+        </div>
+    </div>
+</div>
+
+<header class="site-header">
+    <div class="container header-inner">
+        <div class="brand">
+            <img src="assets/college_logo.png" alt="LBCE crest" class="logo-img">
+            <div>
+                <h1>Dr. Lankapalli Bullayya College of Engineering</h1>
+                <p class="tag">Dr. LBCE — Cultivating Engineering Excellence</p>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <a href="index.html">Home</a>
+            <a href="#" onclick="openDept('CSE')">CSE</a>
+            <a href="#" onclick="openDept('ECE')">ECE</a>
+            <a href="#" onclick="openDept('EEE')">EEE</a>
+            <a href="#" onclick="openDept('MECH')">MECH</a>
+            <a class="btn" href="results.html">Results</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section class="hero container">
+        <div class="hero-inner">
+            <h2>Begin Your Journey Into Engineering Magic</h2>
+            <p class="lead">Join our orders to master ancient engineering spells, modern computation enchantments, and the art of forging magical machines.</p>
+            <div class="hero-ctas">
+                <button onclick="openWelcomeModal()" class="cta">Enter the Academy</button>
+                <a href="departments.html" class="ghost">Explore Departments</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="departments container">
+        <h3>Departments of Distinction</h3>
+        <div class="grid">
+            <div class="card" onclick="openDept('CSE')">
+                <h4>Order of Arcane Computation</h4>
+                <p>Algorithms, AI spellcraft and enchanted systems.</p>
+            </div>
+            <div class="card" onclick="openDept('ECE')">
+                <h4>Order of Enchanted Signals</h4>
+                <p>Magical communications, crystal circuits and signal sorcery.</p>
+            </div>
+            <div class="card" onclick="openDept('EEE')">
+                <h4>Guild of Lightning Masters</h4>
+                <p>High-voltage sorcery and arcane power systems.</p>
+            </div>
+            <div class="card" onclick="openDept('MECH')">
+                <h4>Order of Mechanical Alchemists</h4>
+                <p>Forging enchanted machines and controlling elemental forces.</p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <p>© 2026 Dr. Lankapalli Bullayya College of Engineering — All Rights Reserved</p>
+    </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
